@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /tmp /var/folders -maxdepth 4 -newer /Users/eunah/.ssh/id_ed25519 \\\\\\( -iname \"*.png\" -o -iname \"*.jpg\" -o -iname \"*.jpeg\" -o -iname \"*.webp\" \\\\\\) 2>/dev/null | head -20)",
+      "Read(//private/var/folders/**)",
+      "Bash(mkdir -p assets/images && pwd)",
+      "Bash(python3 -m http.server 8765 > /tmp/server.log 2>&1 & *)",
+      "Skill(run)",
+      "Skill(run:*)",
+      "Bash(find / -maxdepth 6 -iname \"*chromium-cli*\")",
+      "Bash(npx --yes playwright --version)",
+      "Bash(ls /Applications | grep -i -E \"chrome|safari|firefox\")",
+      "Read(//Applications/**)",
+      "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --screenshot=/tmp/preview_full.png --window-size=1440,4000 --hide-scrollbars http://localhost:8765/index.html)",
+      "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --screenshot=/tmp/preview_full.png --window-size=1440,9000 --hide-scrollbars http://localhost:8765/index.html)",
+      "Bash(sips -g pixelWidth -g pixelHeight /tmp/preview_full.png)",
+      "Bash(python3 -c \"import playwright\")",
+      "Bash(python3 -c \"import selenium\")",
+      "Bash(cp style.css /tmp/style.css.bak)",
+      "Bash(python3 -c ' *)"
+    ],
+    "additionalDirectories": [
+      "/Users/eunah/Documents/GitHub/BDB-Beauty-Supply/assets",
+      "/tmp"
+    ]
+  }
+}
