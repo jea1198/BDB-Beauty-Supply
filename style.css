@@ -3,20 +3,20 @@
    ============================================= */
 
 :root {
-  --gold: #c9a84c;
-  --gold-light: #e0c270;
-  --gold-dark: #a07832;
-  --black: #0a0a0a;
-  --dark: #111111;
-  --dark-2: #1a1a1a;
-  --dark-3: #242424;
-  --white: #ffffff;
-  --off-white: #f5f0e8;
-  --grey: #888888;
-  --grey-light: #cccccc;
+  --gold: #ffc000;
+  --gold-light: #ffce3e;
+  --gold-dark: #917300;
+  --black: #000000;
+  --dark: #0c0c0c;
+  --dark-2: #151515;
+  --dark-3: #1f1f1f;
+  --white: #f5f5f5;
+  --off-white: #ece7de;
+  --grey: #7d7d7d;
+  --grey-light: #cfcfcf;
 
-  --font-serif: 'Cormorant Garamond', Georgia, serif;
-  --font-sans: 'Montserrat', sans-serif;
+  --font-display: 'Noto Serif Display', 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', serif;
+  --font-body: 'Inter', 'Helvetica Neue', Arial, sans-serif;
 
   --max-w: 1200px;
   --section-py: 100px;
@@ -28,10 +28,13 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; font-size: 16px; }
 body {
-  background: var(--black);
+  background:
+    radial-gradient(circle at top, rgba(255,192,0,0.04), transparent 18%),
+    linear-gradient(180deg, #000000 0%, #060606 100%);
   color: var(--white);
-  font-family: var(--font-sans);
-  font-weight: 300;
+  font-family: var(--font-body);
+  font-weight: 400;
+  letter-spacing: 0.01em;
   line-height: 1.7;
   overflow-x: hidden;
 }
@@ -63,33 +66,36 @@ ul { list-style: none; }
 .btn {
   display: inline-block;
   padding: 14px 36px;
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 0.75rem;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   transition: var(--transition);
   cursor: pointer;
   border: none;
+  border-radius: 0;
 }
 .btn--gold {
   background: var(--gold);
   color: var(--black);
+  box-shadow: 0 0 0 1px rgba(255,192,0,0.2);
 }
 .btn--gold:hover {
   background: var(--gold-light);
   transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(201,168,76,0.25);
+  box-shadow: 0 10px 30px rgba(255,192,0,0.18);
 }
 .btn--outline {
   background: transparent;
   color: var(--white);
-  border: 1px solid rgba(255,255,255,0.4);
+  border: 1px solid rgba(255,255,255,0.45);
 }
 .btn--outline:hover {
   border-color: var(--gold);
   color: var(--gold);
   transform: translateY(-2px);
+  background: rgba(255,192,0,0.04);
 }
 .btn--full { width: 100%; text-align: center; }
 
@@ -107,10 +113,10 @@ ul { list-style: none; }
   transition: var(--transition);
 }
 .nav.scrolled {
-  background: rgba(10,10,10,0.95);
-  backdrop-filter: blur(12px);
+  background: rgba(0,0,0,0.92);
+  backdrop-filter: blur(14px);
   padding: 18px 48px;
-  border-bottom: 1px solid rgba(201,168,76,0.15);
+  border-bottom: 1px solid rgba(255,192,0,0.12);
 }
 .nav__logo {
   display: flex;
@@ -118,10 +124,11 @@ ul { list-style: none; }
   line-height: 1;
 }
 .logo-bdb {
-  font-family: var(--font-serif);
-  font-size: 1.8rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
   color: var(--gold);
 }
 .logo-sub {
@@ -188,12 +195,9 @@ ul { list-style: none; }
 .hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(10,10,10,0.92) 0%,
-    rgba(10,10,10,0.7) 50%,
-    rgba(10,10,10,0.3) 100%
-  );
+  background:
+    linear-gradient(90deg, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.75) 42%, rgba(0,0,0,0.35) 100%),
+    linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.55) 100%);
 }
 .hero__content {
   position: relative;
@@ -210,10 +214,12 @@ ul { list-style: none; }
   margin-bottom: 20px;
 }
 .hero__title {
-  font-family: var(--font-serif);
-  font-size: clamp(3rem, 7vw, 5.5rem);
-  font-weight: 300;
-  line-height: 1.1;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 5.6rem);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
   color: var(--white);
   margin-bottom: 24px;
 }
@@ -299,10 +305,12 @@ ul { list-style: none; }
   margin-bottom: 16px;
 }
 .section__title {
-  font-family: var(--font-serif);
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 300;
-  line-height: 1.2;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   color: var(--white);
   margin-bottom: 24px;
 }
@@ -366,7 +374,7 @@ ul { list-style: none; }
 }
 .stat-num {
   display: block;
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: 2.4rem;
   font-weight: 600;
   color: var(--black);
@@ -392,13 +400,14 @@ ul { list-style: none; }
   gap: 2px;
 }
 .card {
-  background: var(--dark-2);
+  background: linear-gradient(180deg, #171717 0%, #111111 100%);
   padding: 40px 32px;
+  border: 1px solid rgba(255,255,255,0.04);
   border-bottom: 2px solid transparent;
   transition: var(--transition);
 }
 .card:hover {
-  background: var(--dark-3);
+  background: linear-gradient(180deg, #1e1e1e 0%, #151515 100%);
   border-bottom-color: var(--gold);
   transform: translateY(-4px);
 }
@@ -408,7 +417,7 @@ ul { list-style: none; }
   margin-bottom: 20px;
 }
 .card h3 {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: 1.3rem;
   font-weight: 400;
   color: var(--white);
@@ -474,12 +483,13 @@ ul { list-style: none; }
 }
 .pillar {
   padding: 48px 32px;
-  background: var(--dark);
+  background: linear-gradient(180deg, #151515 0%, #0d0d0d 100%);
+  border: 1px solid rgba(255,255,255,0.04);
   transition: var(--transition);
 }
-.pillar:hover { background: var(--dark-3); }
+.pillar:hover { background: linear-gradient(180deg, #1d1d1d 0%, #121212 100%); }
 .pillar__num {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: 3rem;
   font-weight: 300;
   color: rgba(201,168,76,0.2);
@@ -487,7 +497,7 @@ ul { list-style: none; }
   margin-bottom: 20px;
 }
 .pillar h3 {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: 1.2rem;
   font-weight: 400;
   color: var(--white);
@@ -533,11 +543,11 @@ ul { list-style: none; }
 .form-group input,
 .form-group select,
 .form-group textarea {
-  background: var(--dark-2);
+  background: linear-gradient(180deg, #161616 0%, #101010 100%);
   border: 1px solid rgba(255,255,255,0.08);
   color: var(--white);
   padding: 14px 18px;
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 0.88rem;
   font-weight: 300;
   outline: none;
