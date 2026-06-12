@@ -17,7 +17,8 @@
       "Bash(python3 -c \"import playwright\")",
       "Bash(python3 -c \"import selenium\")",
       "Bash(cp style.css /tmp/style.css.bak)",
-      "Bash(python3 -c ' *)"
+      "Bash(python3 -c ' *)",
+      "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --screenshot=/tmp/full.png --window-size=1440,7000 --hide-scrollbars --virtual-time-budget=3000 \"http://localhost:8765/index.html\")"
     ],
     "additionalDirectories": [
       "/Users/eunah/Documents/GitHub/BDB-Beauty-Supply/assets",

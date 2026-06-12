@@ -22,7 +22,7 @@
 
 /* RESET */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
+html { scroll-behavior: auto; font-size: 16px; }
 body {
   background: var(--cream);
   color: var(--ink);
@@ -220,7 +220,7 @@ ul { list-style: none; }
    ============================================= */
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: 1000px;
   display: flex;
   align-items: flex-end;
   overflow: hidden;
